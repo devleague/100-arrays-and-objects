@@ -1,0 +1,19 @@
+{
+  "name": "100-arrays-and-objects",
+  "version": "0.0.1",
+  "description": "exercises for building, accessing, and interacting with Arrays and Objects in Javascript",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sgnl@github",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^1.10.0",
+    "gulp": "^3.8.10",
+    "gulp-mocha": "^2.0.0",
+    "gulp-util": "^3.0.2",
+    "gulp-watch": "^3.0.0",
+    "mocha": "^2.1.0"
+  }
+}
