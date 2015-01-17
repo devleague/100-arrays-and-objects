@@ -1,4 +1,4 @@
-/*global require, module,  __dirname */
+/*global require */
 /*jslint node: true */
 
 'use strict';
@@ -18,6 +18,4 @@ gulp.task('watch-mocha', function () {
   gulp.watch(['./**.js', 'test/*.spec.js'], ['mocha']);
 });
 
-gulp.task('test', function () {
-  gulp.start('watch-coffee', 'watch-mocha');
-});
+gulp.task('test', ['mocha', 'watch-mocha']);
