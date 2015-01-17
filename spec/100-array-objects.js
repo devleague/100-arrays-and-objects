@@ -8,7 +8,9 @@ var chai = require('chai');
 var should = chai.should();
 var expect = chai.expect;
 var mainFile = require('../main.js');
-var _ = require('../lib/test-helpers.js');
+var keys = require('lib/keys');
+var _ = require('lib/test-helpers');
+
 
 describe('Create Arrays', function () {
   describe('Hawaiian Islands Array', function () {
@@ -24,7 +26,7 @@ describe('Create Arrays', function () {
     });
 
     it('should only contain strings of each major island', function () {
-      var islandsKey = ['hawaii', 'maui', 'oahu', 'kauai', 'molokai', 'lanai', 'niihau', 'kahoolawe'];
+      var islandsKey = keys.islands;
       hawaiianIslandsArr.forEach(function (current){
         current.should.be.a('string');
         islandsKey.should.contain(current.toLowerCase());
