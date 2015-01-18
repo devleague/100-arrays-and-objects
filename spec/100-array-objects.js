@@ -25,12 +25,29 @@ describe('Create Arrays', function () {
       hawaiianIslandsArr.should.have.length(8);
     });
 
-    it('should only contain strings of each major island', function () {
-      var islandsKey = keys.islands;
-      hawaiianIslandsArr.forEach(function (current){
-        current.should.be.a('string');
-        islandsKey.should.contain(current.toLowerCase());
-      });
+    it('should only contain strings representing each major island', function (done) {
+      _.shouldContain(hawaiianIslandsArr, keys.islands, 'string', done);
     });
+
+  }); //
+  describe('Calendar Months', function () {
+
+    var monthsArr = mainFile.calendarMonths;
+
+    it('should be an array', function () {
+      _.isArray(monthsArr);
+    });
+
+    it('should have a length of twelve', function () {
+      monthsArr.should.have.length(12);
+    });
+
+    it('should only contain strings representing each month', function (done) {
+      _.shouldContain(monthsArr, keys.months, 'string', done);
+    });
+
+
+    
   });
+
 }); // end desc('Create Arrays')
