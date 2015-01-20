@@ -1,6 +1,6 @@
 
 /*global require, describe, it */
-/*jslint node: true */
+/*jslint node: true, expr: true */
 
 'use strict';
 
@@ -8,48 +8,18 @@ var chai = require('chai');
 var should = chai.should();
 var expect = chai.expect;
 var mainFile = require('../main.js');
+var answers = mainFile.answers;
 var keys = require('lib/keys');
 var _ = require('lib/test-helpers');
 
 
-describe('Create Arrays', function () {
-  describe('Hawaiian Islands Array', function () {
-    
-    var hawaiianIslandsArr = mainFile.hawaiianIslands;
-    
-    it("should be an array", function (){
-      _.isArray(hawaiianIslandsArr);
+describe('Accessing Data inside of the answers object', function() {
+ describe('Hawaiian Islands', function () {
+  it('each major island should exist as a property', function () {
+    keys.islands.forEach(function(curr, val) {
+      expect(answers).to.have.property(curr);
     });
-
-    it('should have a length of eight', function () {
-      hawaiianIslandsArr.should.have.length(8);
-    });
-
-    it('should only contain strings representing each major island', function (done) {
-      _.shouldContain(hawaiianIslandsArr, keys.islands, 'string', done);
-    });
-
-  }); //
-  describe('Calendar Months', function () {
-
-    var monthsArr = mainFile.calendarMonths;
-
-    it('should be an array', function () {
-      _.isArray(monthsArr);
-    });
-
-    it('should have a length of twelve', function () {
-      monthsArr.should.have.length(12);
-    });
-
-    it('should only contain strings representing each month', function (done) {
-      _.shouldContain(monthsArr, keys.months, 'string', done);
-    });
-
   });
+ });
 
 }); // end desc('Create Arrays')
-
-describe('Modify Array Data', function () {
-  
-});
