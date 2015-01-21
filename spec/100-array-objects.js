@@ -10,7 +10,6 @@ var expect = chai.expect;
 var mainFile = require('../main.js');
 var answers = mainFile.answers;
 var keys = require('lib/keys');
-var _ = require('lib/test-helpers');
 
 
 describe('Accessing Data inside of the answers object', function() {
@@ -28,8 +27,8 @@ describe('Accessing Data inside of the answers object', function() {
   });
  }); // desc('Hawaiian Island')
  describe('User Data', function () {
-  
+
    
- });
+ }); // desc('User Data')
 
 }); // end desc('Accessing Data...')
